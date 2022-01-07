@@ -15,12 +15,13 @@ import java.util.Set;
  * @date: 2021/12/28/ 下午8:23
  * @description 客户端 SocketChannel
  */
-public class NioSocketChannel {
+public class NioClientSocketChannel {
 
     public static void main(String[] args) {
-        NioSocketChannel nsc = new NioSocketChannel();
+        NioClientSocketChannel nsc = new NioClientSocketChannel();
         nsc.test1();
     }
+
     //对应ServerSocketChannel的 test 1-3
     @Test
     public void test1() {
@@ -59,7 +60,7 @@ public class NioSocketChannel {
                 //9.判断客户端是否连接了服务器
                 if (next.isConnectable()) {
                     System.out.println("客户端可以连接服务端了。");
-                    System.out.println("此时，客户端连接状态："+socketChannel.isConnected());
+                    System.out.println("此时，客户端连接状态：" + socketChannel.isConnected());
                     System.out.println(socketChannel);
                     //connection-pending remote=/127.0.0.1:9999
                     // 连接挂起
@@ -68,12 +69,12 @@ public class NioSocketChannel {
 
                     //10.让默认客户端管道挂起状态变为真正的连接状态
                     if (socketChannel.isConnectionPending()) {
-                        System.out.println("客户端连接状态："+socketChannel.isConnected());
+                        System.out.println("客户端连接状态：" + socketChannel.isConnected());
                         /*
-                        * 注意，在发起连接请求之后，完成finishConnect之前，客户端一直都是处于未连接的状态
-                        * */
+                         * 注意，在发起连接请求之后，完成finishConnect之前，客户端一直都是处于未连接的状态
+                         * */
                         socketChannel.finishConnect();
-                        System.out.println("客户端连接状态："+socketChannel.isConnected());
+                        System.out.println("客户端连接状态：" + socketChannel.isConnected());
                         System.out.println(socketChannel);
                         //connected local=/127.0.0.1:54158 remote=/127.0.0.1:9999
                     }
@@ -122,9 +123,8 @@ public class NioSocketChannel {
             //5.连接服务端
             socketChannel.connect(new InetSocketAddress("127.0.0.1", 9999));
 
-            while (true) {
-                //6.连接客户端通道的状态
-                selector.select();
+            //6.连接客户端通道的状态,轮询获取选择器上已就绪的事件，selector.select() > 0代表该事件已就绪
+            while (selector.select() > 0) {
 
                 //7.获取每一个被监听到的状态
                 Set<SelectionKey> selectionKeys = selector.selectedKeys();
@@ -193,9 +193,8 @@ public class NioSocketChannel {
             //5.连接服务端
             socketChannel.connect(new InetSocketAddress("127.0.0.1", 9999));
 
-            while (true) {
+            while (selector.select() > 0) {
                 //6.连接客户端通道的状态
-                selector.select();
 
                 //7.获取每一个被监听到的状态
                 Set<SelectionKey> selectionKeys = selector.selectedKeys();
