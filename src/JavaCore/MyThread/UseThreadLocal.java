@@ -7,7 +7,7 @@ import java.text.SimpleDateFormat;
  * @create 2021/7/27 8:47
  * @Description
  */
-public class UseThreads {
+public class UseThreadLocal {
 
     public void ThreadLocalTest(){
         //ThreadLocal一般用来存放线程不安全且经常使用的变量
