@@ -1,5 +1,7 @@
 package JavaCore.MyLock;
 
+import java.util.concurrent.locks.Lock;
+
 /**
  * @author masuo
  * @data 2021/9/27 15:47
@@ -15,13 +17,13 @@ package JavaCore.MyLock;
  *  可重入锁（递归锁）：在同一线程的外层方法获取锁的时候，进入内层方法时，会自动获取锁。
  */
 
-public class Lock {
+public class MyLock {
 
     //Java中有两种加锁的方式，
     /*
-    * 1.Lock
-    * 2.synchronized
+     * 1.synchronized  关键字  1.5之前的唯一一种加锁方式
+     * 2.Lock  接口  public interface Lock{} since 1.5
     * */
 
-    Lock
+
 }

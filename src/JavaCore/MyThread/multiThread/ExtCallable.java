@@ -55,10 +55,3 @@ class callThread<V> implements Callable<V>{
     }
 }
 
-class exThread implements Executor {
-
-    @Override
-    public void execute(Runnable command) {
-
-    }
-}

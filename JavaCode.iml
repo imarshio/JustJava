@@ -25,9 +25,5 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="deploy" level="project" />
-    <orderEntry type="library" name="Maven: com.vaadin.external.google:android-json:0.0.20131108.vaadin1" level="project" />
-    <orderEntry type="library" name="bos-mservice-dubbox-1.0" level="project" />
-    <orderEntry type="library" name="fastjson-1.2.70" level="project" />
   </component>
 </module>

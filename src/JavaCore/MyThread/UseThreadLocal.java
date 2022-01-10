@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 /**
  * @author masuo
  * @create 2021/7/27 8:47
- * @Description
+ * @Description ThreadLocal的简单使用
  */
 public class UseThreadLocal {
 
