@@ -10,7 +10,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../迅雷下载/junit-4.10.jar!/" />
+          <root url="jar://$MODULE_DIR$/../out/artifacts/msj/msj.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -19,15 +19,11 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../out/artifacts/msj/msj.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jars/junit-4.10.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="deploy" level="project" />
-    <orderEntry type="library" name="Maven: com.vaadin.external.google:android-json:0.0.20131108.vaadin1" level="project" />
-    <orderEntry type="library" name="bos-mservice-dubbox-1.0" level="project" />
-    <orderEntry type="library" name="fastjson-1.2.70" level="project" />
   </component>
 </module>

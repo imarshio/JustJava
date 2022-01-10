@@ -2,7 +2,6 @@ package java8;
 
 import org.junit.Test;
 
-import java.util.Arrays;
 
 /**
  * @author masuo
