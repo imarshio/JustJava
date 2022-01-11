@@ -58,7 +58,7 @@ public class MyClassLoader {
         ClassLoader classLoader = MyClassLoader.class.getClassLoader();//sun.misc.Launcher$AppClassLoader@18b4aac2
         System.out.println(classLoader);
 
-        //获取String类的加载器，引导类加载器加载的，说明Java的黑犀牛内部类都是由引导类加载器加载的
+        //获取String类的加载器，引导类加载器加载的，说明Java的核心内部类都是由引导类加载器加载的
         System.out.println(String.class.getClassLoader());//null
     }
 
