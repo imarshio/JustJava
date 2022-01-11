@@ -1,5 +1,63 @@
+# Git操作
+
 ## 将本地代码与远程仓库绑定
 
+> 适用场景：有了本地代码，想要将本地代码放到远程仓库保存，同时能够保证自己更改本地代码后可以更新到远程仓库，此时可以将代码放到GitHub仓库，具体步骤如下。
+
+1. 初始化本地仓库 
+
+   ```bash
+   git init
+   ```
+
+   
+
+2. 建立对应的远程仓库
+
+   ![image-20220110195403104](https://masuo-github-image.oss-cn-beijing.aliyuncs.com/image/image-20220110195403104.png)
+
+3. 关联本地仓库与远程仓库
+
+   ```bash
+   # url看下图
+   git remote add origin <远程仓库url>
+   ```
+
+   ![image-20220110200941538](https://masuo-github-image.oss-cn-beijing.aliyuncs.com/image/image-20220110200941538.png)
+
+4. 如果远程仓库与本地仓库文件不一致（含有初始化文件或其他提交分支导致）时，需要先拉取当前分支
+
+   ```bash
+   # origin 是远程仓库的意思 
+   # main 是远程仓库的默认分支（看你自己的，上图也可以看到）
+   git pull origin main
+   ```
+
+   
+
+5. 将代码添加到本地仓库
+
+   ```bash
+   git add .
+   ```
+
+   
+
+6. 将代码提交到本地仓库，并可以添加提交备注
+
+   ```bash
+   git commit -m "提交备注"
+   ```
+
+   
+
+7. 将本地代码推到远程仓库
+
+   ```bash
+   git push origin main
+   ```
+
+   
 
 
 ## 将本地代码提交到远程仓库步骤
@@ -15,6 +73,7 @@
 2. 提交本地仓库（携带注释信息）
 
     ```bash
+    # m message 提交信息
     git commit -m "注释信息"
     ```
 
@@ -31,15 +90,12 @@
 4. 将本地仓库推到远程仓库
 
     ```bash
-    git push origin <f>
+    git push origin <分支名>
     ```
 
     
     
     
-## 拉取远程代码修改后提交本地代码
-
-
 
 # target
 
