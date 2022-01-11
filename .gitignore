@@ -16,3 +16,14 @@ bin-release/
 # Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
 # should NOT be excluded as they contain compiler settings and other important
 # information for Eclipse / Flash Builder.
+
+# 在此处添加忽略更新的文件，即无需更新的文件，此处我们需要忽略更新 .iml 文件
+# 配置语法：
+#  以斜杠“/”开头表示目录
+#  以星号“*”通配多个字符
+#  以问号“?”通配单个字符
+#  以方括号“[]”包含单个字符的匹配列表
+#  以叹号“!”表示不忽略(跟踪)匹配到的文件或目录
+
+# JavaCode.iml
+JavaCode.iml
