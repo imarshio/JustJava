@@ -52,6 +52,7 @@ public class MyLock {
 
     /**
      * tryLock()方法 非公平方式
+     *
      * @param lock 线程公共锁
      */
     public void reentrantTryLock(Lock lock) {
@@ -78,7 +79,7 @@ public class MyLock {
                 lock.unlock();
                 System.out.println(Thread.currentThread() + "解锁成功。。");
             }
-        }else {
+        } else {
             System.out.println(Thread.currentThread() + "尝试加锁失败。。");
         }
     }
@@ -113,6 +114,7 @@ public class MyLock {
 
     /**
      * lock()方法
+     *
      * @param lock 线程公共锁
      */
     public void reentrantLock(Lock lock) {
@@ -168,6 +170,7 @@ public class MyLock {
 
     /**
      * tryLock()方法
+     *
      * @param lock 线程公共锁
      */
     public void reentrantTryWithLock(Lock lock) {
@@ -176,7 +179,7 @@ public class MyLock {
         try {
             // tryLock 尝试获取锁，如果获取到锁，返回true，继续执行，没获取到锁，则返回false，不继续执行
             // 带参数，指在参数给定的时间内，重复尝试获取锁
-            if (lock.tryLock(1,TimeUnit.MINUTES)) {
+            if (lock.tryLock(1, TimeUnit.MINUTES)) {
                 System.out.println(Thread.currentThread() + "加锁成功。。");
                 try {
                     Thread.sleep(5000);
@@ -196,7 +199,7 @@ public class MyLock {
                     lock.unlock();
                     System.out.println(Thread.currentThread() + "解锁成功。。");
                 }
-            }else {
+            } else {
                 System.out.println(Thread.currentThread() + "尝试加锁失败。。");
             }
         } catch (InterruptedException e) {
@@ -234,6 +237,7 @@ public class MyLock {
 
     /**
      * tryLock()方法
+     *
      * @param lock 线程公共锁
      */
     public void reentrantInterruptLock(Lock lock) {
@@ -242,7 +246,7 @@ public class MyLock {
         try {
             // tryLock 尝试获取锁，如果获取到锁，返回true，继续执行，没获取到锁，则返回false，不继续执行
             // 带参数，指在参数给定的时间内，重复尝试获取锁
-            if (lock.tryLock(1,TimeUnit.MINUTES)) {
+            if (lock.tryLock(1, TimeUnit.MINUTES)) {
                 System.out.println(Thread.currentThread() + "加锁成功。。");
                 try {
                     Thread.sleep(5000);
@@ -262,7 +266,7 @@ public class MyLock {
                     lock.unlock();
                     System.out.println(Thread.currentThread() + "解锁成功。。");
                 }
-            }else {
+            } else {
                 System.out.println(Thread.currentThread() + "尝试加锁失败。。");
                 lock.lockInterruptibly();
             }

@@ -225,9 +225,9 @@ public class MySync {
     }
 
     /* 锁静态方法 -- 修饰静态方法
-    * 作用域：这个类的所有对象，因为静态方法是属于类的
-    * 业务场景：
-    * */
+     * 作用域：这个类的所有对象，因为静态方法是属于类的
+     * 业务场景：
+     * */
     @Test
     public void synchronizedStaticMethod() {
 
@@ -254,7 +254,7 @@ public class MySync {
         }
     }
 
-    public synchronized static void syncStaticMethod(){
+    public synchronized static void syncStaticMethod() {
         System.out.println(Thread.currentThread() + "静态代码执行中。。");
         for (int i = 0; i < 5; i++) {
             try {
@@ -267,7 +267,7 @@ public class MySync {
         System.out.println(Thread.currentThread() + "静态代码执行完成。。");
     }
 
-    public void callStaticMethod(){
+    public void callStaticMethod() {
         syncStaticMethod();
     }
 
@@ -276,6 +276,4 @@ public class MySync {
     //B. 每个对象只有一个锁（lock）与之相关联，谁拿到这个锁谁就可以运行它所控制的那段代码。
     //C. 实现同步是要很大的系统开销作为代价的，甚至可能造成死锁，所以尽量避免无谓的同步控制。
     //D.同步关键字锁的是对象
-
-
 }
