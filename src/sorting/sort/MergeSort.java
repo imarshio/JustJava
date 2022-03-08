@@ -1,4 +1,4 @@
-package arithmetic.sort;
+package sorting.sort;
 
 import com.ms.math.Random;
 import org.junit.Test;

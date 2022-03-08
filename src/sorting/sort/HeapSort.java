@@ -1,4 +1,4 @@
-package arithmetic.sort;
+package sorting.sort;
 
 import org.junit.Test;
 
@@ -44,6 +44,7 @@ public class HeapSort {
         //此时是一个无序堆，先构建大顶堆
         int length = unsort.length;
         //首先找到最后一个非叶子节点，然后从下往上推
+        // 寻找最后一个非叶子节点的公式为：（length/2-1）
         int lastNoLeaf = length / 2 - 1;
         //大顶堆
         buildBigPileTop(unsort, lastNoLeaf, length);
@@ -150,7 +151,8 @@ public class HeapSort {
 
     private void shiftUp(int[] unsort, int noLeaf, int length) {
 
-        //先与左子节点相比
+        //先与左子节点相比，
+        // 在堆中，一个结点的左子节点下标为：（index*2+1），右子节点的下标为：（index*2+2）
         int left = noLeaf * 2 + 1;
         if (unsort[left] > unsort[noLeaf]) {
             //左子节点大于父节点，交换

@@ -1,14 +1,14 @@
-package arithmetic;
+package sorting;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import arithmetic.sort.BubbleSort;
-import arithmetic.sort.InsertSort;
-import arithmetic.sort.QuickSort;
-import arithmetic.sort.SelectSort;
-import arithmetic.sort.ShellSort;
+import sorting.sort.BubbleSort;
+import sorting.sort.InsertSort;
+import sorting.sort.QuickSort;
+import sorting.sort.SelectSort;
+import sorting.sort.ShellSort;
 import org.junit.Test;
 
 public class SortTest {

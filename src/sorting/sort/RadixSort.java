@@ -1,4 +1,4 @@
-package arithmetic.sort;
+package sorting.sort;
 
 import org.junit.Test;
 
@@ -25,12 +25,12 @@ public class RadixSort {
 
         //获取最大值
         int max = Arrays.stream(unsort).max().getAsInt();
-        //获取最大值得位数,如数组中最大值为123，那么digits = 3，
+        //获取最大值的长度,如数组中最大值为125，那么digits = 3，
         int digits = String.valueOf(max).length();
         //获取最小值
         int min = Arrays.stream(unsort).min().getAsInt();
 
-        //获取数组位数,数组长度
+        //从0到9一共10个数字，所以数组长度为10
         int length = 10;
 
         //添加桶
