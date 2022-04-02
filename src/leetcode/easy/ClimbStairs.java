@@ -44,8 +44,5 @@ public class ClimbStairs {
 		}else {
 			return climbStairs(n-1)+climbStairs(n-2);
 		}
-
-
-
 	}
 }

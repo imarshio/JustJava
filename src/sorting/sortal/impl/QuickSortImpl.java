@@ -16,38 +16,54 @@ public class QuickSortImpl implements Sorting {
     @Override
     public int[] sortDescent(int[] unsorted) {
         int length = unsorted.length;
-        quickSortPR(unsorted, 0, length - 1);
+        // 快排版本1.0：左侧为《= pivot，右侧为 》 pivot。时间复杂度为O（N*logN）,空间复杂度为O（logN）
+        quickSort1(unsorted, 0, length - 1);
+
+        // 快排版本2.0：左侧为《 pivot，中间为 = pivot，右侧为 》pivot。时间复杂度为O（N*logN）,空间复杂度为O（logN）
+        quickSort2(unsorted, 0, length - 1);
+
+        // 快排版本3.0：左侧为《 pivot，中间为 = pivot，右侧为 》pivot，且pivot为随机选取的点，时间复杂度为O（N*logN）,空间复杂度为O（logN）
+        quickSort2(unsorted, 0, length - 1);
+
         return unsorted;
     }
 
-    private void quickSortPR(int[] unsorted, int left, int right) {
-        if (left >= right) {
-            return;
-        }
+    /**
+     * 快排版本1.0
+     * 左侧为《= pivot，右侧为 》 pivot。
+     * 时间复杂度为O（N*logN）,，最坏为O（N^2）空间复杂度为O（logN）
+     * @param unsorted 未排序数组
+     * @param L 左侧起点
+     * @param R 右侧起点
+     */
+    private void quickSort1(int[] unsorted, int L, int R) {
 
-        int indexL = left;
-        int indexR = right;
-        int pivot = unsorted[right];
-        while (left < right) {
-            while (unsorted[left] < pivot) {
-                left++;
-            }
-            while (unsorted[right] >= pivot && left < right) {
-                right--;
-            }
-            if (left != right) {
-                int temp = unsorted[left];
-                unsorted[left] = unsorted[right];
-                unsorted[right] = temp;
-            }
-        }
-
-        unsorted[indexR] = unsorted[left];
-        unsorted[left] = pivot;
-
-        quickSortPR(unsorted,indexL,left-1);
-        quickSortPR(unsorted,left+1,indexR);
     }
+
+    /**
+     * 快排版本2.0
+     * 左侧为《 pivot，中间为 = pivot，右侧为 》pivot.
+     * 时间复杂度为O（N*logN）,空间复杂度为O（logN）
+     * @param unsorted 未排序数组
+     * @param L 左侧起点
+     * @param R 右侧起点
+     */
+    private void quickSort2(int[] unsorted, int L, int R) {
+
+    }
+
+    /**
+     * 快排版本3.0
+     * 左侧为《 pivot，中间为 = pivot，右侧为 》pivot，且pivot为随机选取的点.
+     * 时间复杂度为O（N*logN）,空间复杂度为O（logN）
+     * @param unsorted 未排序数组
+     * @param L 左侧起点
+     * @param R 右侧起点
+     */
+    private void quickSort3(int[] unsorted, int L, int R) {
+
+    }
+
 
     @Override
     public int[] sortAscent(int[] unsorted) {

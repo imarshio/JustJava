@@ -12,19 +12,26 @@ import java.util.ArrayList;
 
 public class BubbleSortImpl implements Sorting {
 
+    private int [] sorted;
+
+    private void setSorted(int[] sorted) {
+        this.sorted = sorted.clone();
+    }
+
     @Override
     public int[] sortDescent(int[] unsorted) {
-        for (int i = unsorted.length - 1; i > 0; i--) {
+        setSorted(unsorted);
+        for (int i = sorted.length - 1; i > 0; i--) {
             //从前往后对比，最大的或最小的放在最后
-            for (int j = 0; j < unsorted.length - 1; j++) {
-                if (unsorted[j] > unsorted[j + 1]) {
-                    int temp = unsorted[j];
-                    unsorted[j] = unsorted[j + 1];
-                    unsorted[j + 1] = temp;
+            for (int j = 0; j < sorted.length - 1; j++) {
+                if (sorted[j] > sorted[j + 1]) {
+                    int temp = sorted[j];
+                    sorted[j] = sorted[j + 1];
+                    sorted[j + 1] = temp;
                 }
             }
         }
-        return unsorted;
+        return sorted;
     }
 
     @Override

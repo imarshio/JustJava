@@ -1,4 +1,4 @@
-package mid;
+package leetcode.mid;
 /**
 * @arithmetics ：
 * @author ： masuo
