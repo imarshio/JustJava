@@ -7,7 +7,6 @@ import java.util.Arrays;
 import java.util.HashSet;
 
 
-
 /**
  * @author masuo
  * @data 2021/9/10 17:09
@@ -23,8 +22,8 @@ public class MergeSort {
 
         HashSet<Integer> unsorted = new HashSet<>();
         int i = 0;
-        while (i<20000000){
-            unsorted.add(Random.randomInt(0,2000000));
+        while (i < 20000000) {
+            unsorted.add(Random.randomInt(0, 2000000));
             i++;
         }
 
@@ -41,8 +40,8 @@ public class MergeSort {
         long start1 = System.currentTimeMillis();
         mergeSort1(unsort1);
         long end1 = System.currentTimeMillis();
-        System.out.println(("数组长度为："+unsorted.size()));
-        System.out.println("方法一用时："+(end1-start1));
+        System.out.println(("数组长度为：" + unsorted.size()));
+        System.out.println("方法一用时：" + (end1 - start1));
 
         int[] unsort2 = new int[unsorted.size()];
         //int[] unsort = {2, 1, 8, 4, 5, 9, 7, 4, 85, 0};
@@ -52,9 +51,9 @@ public class MergeSort {
             ++s;
         }
         long start2 = System.currentTimeMillis();
-        mergeSort2(unsort2,0,unsort2.length-1);
+        mergeSort2(unsort2, 0, unsort2.length - 1);
         long end2 = System.currentTimeMillis();
-        System.out.println("方法二用时："+(end2-start2));
+        System.out.println("方法二用时：" + (end2 - start2));
 
         //多次测试发现，当数组容量在10万左右时，时间在30~100ms徘徊
         // 方法二比较优秀，因为方法一在中间建立了多个数组，空间浪费严重，
@@ -65,13 +64,13 @@ public class MergeSort {
     }
 
 
-    private void mergeSort2(int[] unsort, int left , int right) {
+    private void mergeSort2(int[] unsort, int left, int right) {
 
-        int mid = (right+left)/2;
+        int mid = (right + left) / 2;
         if (left < right) {
-            mergeSort2(unsort,left,mid);
-            mergeSort2(unsort,mid+1,right);
-            merge(unsort,left,mid,right);
+            mergeSort2(unsort, left, mid);
+            mergeSort2(unsort, mid + 1, right);
+            merge(unsort, left, mid, right);
         }
     }
 
@@ -79,41 +78,38 @@ public class MergeSort {
         //归并处理, 0 0 1
         int ll = mid;
         int lr = right;
-        int size = right-left+1;
-        int []temp = new int[size];
-        while(ll >= left && lr > mid){
+        int size = right - left + 1;
+        int[] temp = new int[size];
+        while (ll >= left && lr > mid) {
             //从大往小排序
-            if(unsort[ll]>unsort[lr]){
-                temp[size-1] = unsort[ll];
+            if (unsort[ll] > unsort[lr]) {
+                temp[size - 1] = unsort[ll];
                 --ll;
                 --size;
-            }else {
-                temp[size-1] = unsort[lr];
+            } else {
+                temp[size - 1] = unsort[lr];
                 --lr;
                 --size;
             }
         }
-        while(ll >= left){
+        while (ll >= left) {
             //从大往小排序
-            temp[size-1] = unsort[ll];
-            --ll;
-            --size;
+            temp[--size] = unsort[ll--];
         }
-        while(lr > mid){
+        while (lr > mid) {
             //从大往小排序
-            temp[size-1] = unsort[lr];
+            temp[size - 1] = unsort[lr];
             --lr;
             --size;
         }
-        while(left <= right){
-            unsort[left] = temp[size];
-            ++size;
-            ++left;
+        while (left <= right) {
+            unsort[left++] = temp[size++];
         }
     }
 
 
-    private void addTest() {
+    @Test
+    public void addTest() {
         int i = 0;
         //i++;//会生成新的对象 ===》相当于 ：int j = i+1; i = j;
         System.out.println("执行时的i等于：" + (i++));//0,因为“++”在后面，所以后执行“++”操作，
@@ -129,6 +125,7 @@ public class MergeSort {
 
     /**
      * 这种方法会浪费空间，
+     *
      * @param unsort 未排序数组，
      * @return 排序数组
      */
@@ -150,9 +147,9 @@ public class MergeSort {
 
         int mid = length / 2;
         //取左侧数组
-        int [] left = Arrays.copyOfRange(unsort,0,mid);
+        int[] left = Arrays.copyOfRange(unsort, 0, mid);
         //取右侧数组
-        int [] right = Arrays.copyOfRange(unsort,mid,length);
+        int[] right = Arrays.copyOfRange(unsort, mid, length);
         return sort(mergeSort1(left), mergeSort1(right));
     }
 
@@ -160,7 +157,7 @@ public class MergeSort {
         int ll = left.length;
         int lr = right.length;
         int[] sorted = new int[ll + lr];
-        int size = ll + lr -1;
+        int size = ll + lr - 1;
         while (ll > 0 && lr > 0) {
             if (left[ll - 1] > right[lr - 1]) {
                 sorted[size] = left[ll - 1];
@@ -172,12 +169,12 @@ public class MergeSort {
             --size;
         }
         //由于二分的特点，这里最多会剩余一个元素，不确定是在左还是右，但是只有一个，所以我们直接放入即可
-        while (ll>0){
+        while (ll > 0) {
             sorted[size] = left[ll - 1];
             --size;
             --ll;
         }
-        while (lr>0){
+        while (lr > 0) {
             sorted[size] = right[lr - 1];
             --size;
             --lr;

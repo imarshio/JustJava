@@ -8,6 +8,8 @@ import java.util.ArrayList;
  * @author masuo
  * @data 2/3/2022 上午8:14
  * @Description 冒泡排序，依次对比两两相邻的数字，
+ * 时间复杂度：O（N^2）
+ * 空间复杂度：O(1)
  */
 
 public class BubbleSortImpl implements Sorting {

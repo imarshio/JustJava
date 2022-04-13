@@ -29,7 +29,6 @@ public class ArraysAPI {
         nums.add(7);
 
         nums.forEach(i -> {
-
             i = i * 10;
             System.out.println(i);
         });

@@ -9,6 +9,8 @@ import java.util.ArrayList;
  * @data 2/3/2022 下午3:50
  * @Description 选择排序, 是冒泡排序的升级版，在冒泡排序里每两个相邻的数字都需要对比
  * 选择排序只需要选择一次的最大值/最小值，最后再进行替换，一次循环只需要交换一次位置
+ * 时间复杂度：O（N^2）
+ * 空间复杂度：O（1）
  */
 
 public class SelectSortImpl implements Sorting {

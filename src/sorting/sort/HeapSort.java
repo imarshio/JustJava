@@ -47,9 +47,9 @@ public class HeapSort {
         // 寻找最后一个非叶子节点的公式为：（length/2-1）
         int lastNoLeaf = length / 2 - 1;
         //大顶堆
-        buildBigPileTop(unsort, lastNoLeaf, length);
+        // buildBigPileTop(unsort, lastNoLeaf, length);
         //小顶堆
-        //buildSmallCapPile(unsort, lastNoLeaf, length);
+        buildSmallCapPile(unsort, lastNoLeaf, length);
 
         for (int i : unsort) {
             System.out.println(i);
@@ -67,7 +67,11 @@ public class HeapSort {
             swap(unsort, 0, i);
             //重新调整
             //“删除后”每次调整都是从0开始
-            shiftDown(unsort,0,i);
+            // shiftDown(unsort,0,i);
+            shiftDownSmall(unsort, 0, i);
+        }
+        for (int i : unsort) {
+            System.out.print(i + "  ");
         }
     }
 
@@ -80,36 +84,8 @@ public class HeapSort {
      */
     private void buildSmallCapPile(int[] unsort, int lastNoLeaf, int length) {
         while (lastNoLeaf >= 0) {
-            shiftUpSmall(unsort, lastNoLeaf, length);
-            --lastNoLeaf;
+            shiftDownSmall(unsort, lastNoLeaf--, length);
         }
-    }
-
-    /**
-     * 小根堆上调
-     */
-    private void shiftUpSmall(int[] unsort, int lastNoLeaf, int length) {
-
-        //在这里说一下为什么左儿子节点在上调过程中不需要判断是否越界，
-        // 首先，传入的数据是最后一个非叶子节点，根据非叶子节点的特点，
-        // 他一定有左儿子节点，右儿子节点不一定有，所以不需要判断左儿子节点越界，
-        // 其次，在建堆时有 “lastNoLeaf >= 0” 限制着
-
-        int left = lastNoLeaf * 2 + 1;
-        //左叶子节点
-        if (unsort[left] < unsort[lastNoLeaf]) {
-            swap(unsort, left, lastNoLeaf);
-            shiftDownSmall(unsort, left, length);
-        }
-        int right = lastNoLeaf * 2 + 2;
-        //右叶子节点
-        if (right < length) {
-            if (unsort[right] < unsort[lastNoLeaf]) {
-                swap(unsort, right, lastNoLeaf);
-                shiftDownSmall(unsort, right, length);
-            }
-        }
-
     }
 
     /**
@@ -189,18 +165,12 @@ public class HeapSort {
         if (left >= length) return;
         if (unsort[left] > unsort[noLeaf]) {
             swap(unsort, left, noLeaf);
-            //int temp = unsort[left];
-            //unsort[left] = unsort[noLeaf];
-            //unsort[noLeaf] = temp;
             shiftDown(unsort, left, length);
         }
         int right = noLeaf * 2 + 2;
         if (right >= length) return;
         if (unsort[right] > unsort[noLeaf]) {
             swap(unsort, right, noLeaf);
-            //int temp = unsort[right];
-            //unsort[right] = unsort[noLeaf];
-            //unsort[noLeaf] = temp;
             shiftDown(unsort, right, length);
         }
 
@@ -213,14 +183,14 @@ public class HeapSort {
         unsort[noLeaf] = temp;
 
         //其次还可以通过加减法来实现
-        unsort[index] = unsort[index] + unsort[noLeaf];
-        unsort[noLeaf] = unsort[index] - unsort[noLeaf];//=index
-        unsort[index] = unsort[index] - unsort[noLeaf];//=noLeaf
+        // unsort[index] = unsort[index] + unsort[noLeaf];
+        // unsort[noLeaf] = unsort[index] - unsort[noLeaf];//=index
+        // unsort[index] = unsort[index] - unsort[noLeaf];//=noLeaf
 
         //使用异或，利用的是二进制的特点，加和使用的是十进制的特点
-        unsort[index] = unsort[index] ^ unsort[noLeaf];
-        unsort[noLeaf] = unsort[index] ^ unsort[noLeaf];
-        unsort[index] = unsort[index] ^ unsort[noLeaf];
+        // unsort[index] = unsort[index] ^ unsort[noLeaf];
+        // unsort[noLeaf] = unsort[index] ^ unsort[noLeaf];
+        // unsort[index] = unsort[index] ^ unsort[noLeaf];
 
     }
 

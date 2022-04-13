@@ -11,6 +11,7 @@ import java.util.List;
  */
 
 public class SeeObject {
+
     public static void main(String[] args) {
 
         test1();
@@ -49,12 +50,24 @@ public class SeeObject {
 
     private static void CloneConstructorTest() {
 
+        System.out.println("CloneConstructor");
         class CloneConstructor{
             private String s;
 
             //构造函数
             public CloneConstructor(){
                 s = "";
+            }
+
+            /**
+             * 克隆构造方法，原理与构造方法类似，不同点在于需要获取原始对象数据，并将拷贝对象的数据赋值给拷贝对象
+             */
+            public CloneConstructor(CloneConstructor original){
+                //代替clone方法，
+                // 浅拷贝实现
+                this.s = original.s;
+                // 深拷贝实现
+                this.s = new String(original.s);
             }
 
             public String getS() {
@@ -65,14 +78,15 @@ public class SeeObject {
                 this.s = s;
             }
 
-            /**
-             * 克隆构造方法，原理与构造方法类似，不同点在于需要获取原始对象数据，并将拷贝对象的数据赋值给拷贝对象
-             */
-            public CloneConstructor(CloneConstructor original){
-                //代替clone方法，
-                this.s = original.s;
-            }
         }
+
+        CloneConstructor cc1 = new CloneConstructor();
+        cc1.setS("ms");
+        CloneConstructor cc2 = new CloneConstructor(cc1);
+        System.out.println(cc2.getS());
+        System.out.println(cc1 == cc2);
+        //true
+        System.out.println(cc1.getS() == cc2.getS());
     }
 
     private static void BoneCloneTest() {
@@ -115,7 +129,7 @@ public class SeeObject {
             e.printStackTrace();
         }
         assert bc2 != null;
-        System.out.println(bc2.getS());//555
+        System.out.println(bc2.getS() == bc1.getS());//555
     }
 
     private static void skinCloneTest() {
@@ -149,7 +163,7 @@ public class SeeObject {
         sct1.setI(50);
         try {
             SkinClone sct2 = sct1.clone();
-            System.out.println(sct2.getI());
+            System.out.println(sct2.getI() == sct1.getI());
         } catch (CloneNotSupportedException e) {
             e.printStackTrace();
         }
