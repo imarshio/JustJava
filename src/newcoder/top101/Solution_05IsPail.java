@@ -38,4 +38,14 @@ public class Solution_05IsPail {
 
         return stack.isEmpty();
     }
+
+    static class ListNode {
+        int val;
+        ListNode next = null;
+
+        public ListNode(int x) {
+            val = x;
+        }
+    }
+
 }

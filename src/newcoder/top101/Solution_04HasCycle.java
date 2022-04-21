@@ -33,4 +33,14 @@ public class Solution_04HasCycle {
         }
         return false;
     }
+
+    static class ListNode {
+        int val;
+        ListNode next = null;
+
+        public ListNode(int x) {
+            val = x;
+        }
+    }
+
 }

@@ -2,6 +2,11 @@ package java8;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 
 /**
  * @author masuo
@@ -27,6 +32,41 @@ import org.junit.Test;
 
 public class Lambda {
 
+    /****** 常用案例 ******/
+    @Test
+    public void forEachDemo() {
+        // 使用Arrays.asList生成一个数组，注意，此数组不可扩展，不可删除，详情看内部源码实现
+        List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6);
+        List<Integer> list1 = new ArrayList<Integer>() {
+            {
+                add(1);
+                add(2);
+                add(3);
+            }
+        };
+
+        // 我们经常循环遍历数组，旧方法
+        for (Integer integer : list) {
+            System.out.print(integer + " ");
+        }
+
+        // lambda
+        list1.forEach(i -> {
+            System.out.print(i + " ");
+        });
+
+    }
+
+    @Test
+    public void filterDemo() {
+        List<Integer> list = Arrays.asList(1, 2, 3, 4, 5);
+        List<Integer> collect = list.stream()
+                .filter(i -> i == 1 || i == 2)
+                .collect(Collectors.toList());
+        collect.forEach(i -> System.out.println(i + " "));
+
+    }
+
     //Lambda 也称 闭包，
     // 允许我们将函数当成参数传递给某个方法
     // 或者把代码本身当作数据处理
@@ -35,7 +75,7 @@ public class Lambda {
 
         //例子
         //需要类型声明
-        MathOperation addition = (int a, int b) -> a + b;
+        MathOperation addition = (a, b) -> a + b;
         System.out.println(addition.getClass());
         System.out.println(addition.operation(11, 22));
         //不需要类型声明

@@ -12,24 +12,6 @@ import java.util.List;
  */
 
 public class Solution_02ReverseBetween {
-    /*
-     * 给定一个单链表的头结点pHead(该头节点是有值的，比如在下图，它的val是1)，长度为n，反转该链表后，返回新链表的表头。
-     *
-     * 数据范围： 0≤n≤1000
-     * 要求：空间复杂度 O(1) ，时间复杂度 O(n) 。
-     */
-    private void reverseList(ListNode head) {
-        ListNode pre = null;
-        ListNode cur = head;
-        while (cur != null) {
-            //Cur_next 指向cur节点的下一个节点
-            ListNode Cur_next = cur.next;
-            cur.next = pre;
-            pre = cur;
-            cur = Cur_next;
-        }
-    }
-
 
     /**
      * 将一个节点数为 size 链表 m 位置到 n 位置之间的区间反转，要求时间复杂度 O(n)，空间复杂度 O(1)。
@@ -41,24 +23,26 @@ public class Solution_02ReverseBetween {
         if (head == null || head.next == null || m == n) {
             return head;
         }
+        //找到头和前置节点
         ListNode pre = null;
         ListNode left = head;
         while (--m > 0) {
             pre = left;
             left = pre.next;
         }
+        //找到尾和后置节点
         ListNode right = head;
         while (--n > 0) {
             right = right.next;
         }
         ListNode next = right.next;
 
-        // 断开
+        // 断开与后面相连的部分，也是孤立前面的链表，这样就形成了反转前面的链表，
         right.next = null;
 
-        //翻转 left -> right,同时拼接最后面的部分
+        // 翻转 left -> right,同时拼接最后面的部分
         ListNode cur = left.next;
-        //此时left为末尾，下一个就是next
+        // 断开，而因为此时left为末尾，下一个就是next
         left.next = next;
         while (cur != null) {
             ListNode temp = cur.next;
@@ -69,8 +53,10 @@ public class Solution_02ReverseBetween {
 
         // 拼接
         if(pre == null){
+            // pre 为null，则left为头，直接返回
             return left;
         }
+        // pre不为null，则代表有前置节点，则拼接起来
         pre.next = left;
         return head;
     }
@@ -106,7 +92,7 @@ public class Solution_02ReverseBetween {
     }
 
     @Test
-    public void text() {
+    public void test() {
         ListNode h = new ListNode(1);
         h.next = new ListNode(2);
         // h.next.next = new ListNode(3);
@@ -117,6 +103,15 @@ public class Solution_02ReverseBetween {
         while (node != null) {
             System.out.println(node.val);
             node = node.next;
+        }
+    }
+
+    static class ListNode {
+        int val;
+        ListNode next = null;
+
+        public ListNode(int x) {
+            val = x;
         }
     }
 

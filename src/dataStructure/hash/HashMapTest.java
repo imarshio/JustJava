@@ -18,6 +18,8 @@ public class HashMapTest {
 
         HashMap<String, String> hashMap = new HashMap<>(4);
         hashMap.put("0","000");
+        hashMap.put("1","111");
+        hashMap.put("2","222");
         String s = hashMap.get("0");
         System.out.println(s);
 

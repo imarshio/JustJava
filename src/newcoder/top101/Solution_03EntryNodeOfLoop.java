@@ -39,4 +39,14 @@ public class Solution_03EntryNodeOfLoop {
         }
         return null;
     }
+
+    static class ListNode {
+        int val;
+        ListNode next = null;
+
+        public ListNode(int x) {
+            val = x;
+        }
+    }
+
 }
