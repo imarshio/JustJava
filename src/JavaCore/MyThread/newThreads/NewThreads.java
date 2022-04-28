@@ -8,7 +8,7 @@ import java.util.concurrent.FutureTask;
 /**
  * @author masuo
  * @data 10/1/2022 下午2:24
- * @Description 线程的几种创建方法
+ * @Description 线程的几种创建方法,推荐使用线程池创建线程，因为线程池能减少操作时间，如线程上下文切换
  */
 
 public class NewThreads {

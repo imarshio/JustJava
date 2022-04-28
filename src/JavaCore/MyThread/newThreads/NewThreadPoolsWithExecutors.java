@@ -1,23 +1,23 @@
 package JavaCore.MyThread.newThreads;
 
+import javafx.concurrent.Task;
 import org.junit.Test;
 
 import java.time.LocalTime;
+import java.util.ArrayDeque;
 import java.util.NoSuchElementException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 /**
  * @author masuo
  * @data 10/1/2022 下午3:07
- * @Description 新建线程池的方法
+ * @Description 使用Executors新建线程池
+ *
  */
 
-public class NewThreadPools {
+public class NewThreadPoolsWithExecutors {
 
-    /* Executors */
+    /* Executors : 不推荐 */
 
     //1.newCachedThreadPool 不限容量的线程池
     @Test
@@ -248,5 +248,7 @@ public class NewThreadPools {
         }
         //因为是周期性执行，无需关闭连接池
     }
+
+
 }
 

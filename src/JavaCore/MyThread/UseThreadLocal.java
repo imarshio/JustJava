@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
  * @author masuo
  * @create 2021/7/27 8:47
  * @Description ThreadLocal的简单使用
+ * 1、在任务结束时，需要将无用的对象从ThreadLocal中移除
  */
 public class UseThreadLocal {
 
@@ -18,5 +19,7 @@ public class UseThreadLocal {
 
         //获取
         SimpleDateFormat simpleDateFormat1 = sdf.get();
+
+        sdf.remove();
     }
 }

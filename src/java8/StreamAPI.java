@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * @author masuo
@@ -27,34 +28,55 @@ public class StreamAPI {
     //1.生成流,内部流处理
     public void generateStream() {
 
-        //生成数据源 - 集合、数组...
+        System.out.println("********Arrays.asList*********");
+        // 生成数据源 - 集合、数组...
         List<String> strings = Arrays.asList("abc", "", "bc", "efg", "abcd", "", "jkl");
-        strings.forEach(System.out::println);
+        strings.forEach(s -> System.out.println(s + " "));
 
-        //stream() - 串行流
+        System.out.println("********Stream.of/List.stream*********");
+        // 数组 转化成 stream
+        /*
+        * Stream.of:类似于Arrays.asList()
+        * */
+        Stream<List<String>> stream1 = Stream.of(strings,strings,strings);
+        Stream<String> stream2 = Stream.of("abc", "", "bc", "efg", "abcd", "", "jkl");
+        Stream<String> stream3 = strings.stream();
+
+        System.out.println(stream1);
+        System.out.println(stream2);
+        System.out.println(stream3);
+
+        System.out.println("********Stream.filter*********");
+        // stream() - 串行流 过滤
         List<String> collect = strings.stream().filter(string -> !(string.isEmpty())).collect(Collectors.toList());
-        //迭代输出数组中的数据
+        // 迭代输出数组中的数据
+        collect.forEach(s-> System.out.print(s + " "));
+        // filter() - 设置条件过滤元素,其结果仍然是一个stream类
+        Stream<String> stream4 = strings.stream().filter(string -> (string.contains("b")));
+        // collect(),将stream转化为数组
+        collect = stream4.collect(Collectors.toList());
         collect.forEach(System.out::println);
 
-        //parallelStream() - 并行流
+        System.out.println("********Stream.parallelStream*********");
+        // parallelStream() - 并行流
         System.out.println(strings.parallelStream().filter(s -> (!s.isEmpty())).count());
 
         collect.forEach(System.out::println);
 
+        System.out.println("********Random.ints().limit*********");
         Random random = new Random();
         System.out.println(random.nextInt(20));
-        random.ints().limit(10).forEach(System.out::println);
+        random.ints().limit(10).forEach(i -> System.out.print(i + " "));
 
-        //map 用于映射每个元素的对应的结果
+        System.out.println("********Stream.map*********");
+        // map 用于映射每个元素的对应的结果
         List<Integer> numbers = Arrays.asList(3, 2, 2, 3, 7, 3, 5);
         List<Integer> numberList = numbers.stream().map(i -> (i * i)).collect(Collectors.toList());
         numberList.forEach(System.out::println);
 
-        //filter() - 设置条件过滤出元素
-        collect = strings.stream().filter(string -> (string.contains("b"))).collect(Collectors.toList());
-        collect.forEach(System.out::println);
 
-        //limit() - 获取指定数量的流
+
+        // limit() - 获取指定数量的流
         random.ints().limit(10).forEach(System.out::println);
     }
 
