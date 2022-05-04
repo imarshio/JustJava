@@ -1,22 +1,19 @@
-package CodeTest;
+package iterable.collection.stack;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Deque;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 /**
 * @arithmetics ：
 * @author ： masuo
 * @date 2021年3月7日 下午11:51:13
-* 类说明
+* @description 栈测试，实际上栈使用队列完成的
 */
 public class StackTest {
 
 	public static void main(String[] args) {
 		//
 		System.out.println("***********stack**************");
+		Stack<Integer> stack1 = new Stack<>();
 		Deque<String> stack= new ArrayDeque<>();
 		char[] c = {'a','b','c','a','b','c'};
 		//new String(charArray,index,num):从charArray中选取从index开始的共num位字符

@@ -1,4 +1,4 @@
-package CodeTest;
+package iterable.collection.list;
 
 import org.junit.Test;
 
