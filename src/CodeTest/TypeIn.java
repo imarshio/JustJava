@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * @author: masuo
  * @data: 2021/8/11 15:15
- * @Description: input 代替Scanner，改成类似List<E>
+ * @Description: input 代替Scanner，改成类似 List<E>
  */
 
 public final class TypeIn {
