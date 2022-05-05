@@ -5,7 +5,6 @@ import org.junit.Test;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -242,7 +241,7 @@ public class MyLock {
      */
     public void reentrantInterruptLock(Lock lock) {
 
-        System.out.println(Thread.currentThread() + "reentrantTryWithLock尝试加锁。。");
+        System.out.println(Thread.currentThread() + "reentrantInterruptLock尝试加锁。。");
         try {
             // tryLock 尝试获取锁，如果获取到锁，返回true，继续执行，没获取到锁，则返回false，不继续执行
             // 带参数，指在参数给定的时间内，重复尝试获取锁
