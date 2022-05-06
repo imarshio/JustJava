@@ -1,11 +1,20 @@
-package JavaBase;
+package JavaBase.staticUsage;
 
 /**
  * @author masuo
  * @create 2021/7/10 9:36
  * @Description static 的使用
+ *  - 修饰变量        --> 静态变量
+ *  - 修饰代码块      --> 静态代码块
+ *  - 修饰方法        --> 静态方法
+ *  - 修饰内部类       --> 静态内部类
+ *  - 修饰类           --> 静态类
+ *
+ *  -- 可以得到：static修饰的变量在类加载时被初始化，所以在static修饰的代码块和方法中不能有非静态变量
+ *  -- static 不能和 this 一起使用，因为this代表是的一个类对象，所以构造方法不是静态方法，因为构造方法有this
+ *
  */
-public class StaticType {
+public class _01StaticType {
 
     private static int s;
 
@@ -24,7 +33,7 @@ public class StaticType {
         StaticClassOne sco1 = new StaticClassOne();
         StaticClassOne sco2 = new StaticClassOne();
 
-        //在执行完声明之后，实例变量x被初始化，
+        // 在执行完声明之后，实例变量x被初始化，
         // 在这里，0是系统默认赋值的，
         int x = sco1.x;
         int y = StaticClassOne.y;
@@ -46,6 +55,13 @@ class StaticClassOne{
     public int x; //实例变量
     public static int y ; //静态变量
 
+    static {
+        System.out.println("初始化y=" + StaticClassOne.y);
+        //
+        // System.out.println("初始化x=" + x);
+
+        // System.out.println(this.x);
+    }
     public static void getY(){}
 }
 

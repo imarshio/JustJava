@@ -7,21 +7,21 @@ public class JavaBaseType {
      * this used for the base type of java
      */
     public static void main(String[] args) {
-       baseSize();
-       packType();
-       bufferPool();
-       stringpool();
+        baseSize();
+        packType();
+        bufferPool();
+        stringPool();
     }
 
-    private static void stringpool() {
+    private static void stringPool() {
         System.out.println("string pool");
         String s1 = new String("123");
         String s2 = new String("123");
-        System.out.println(s1==s2);//false
+        System.out.println(s1 == s2);//false
         String s3 = s1.intern();
         String s4 = s2.intern();
-        System.out.println(s3==s4);//true
-        System.out.println(s1==s3);//false
+        System.out.println(s3 == s4);//true
+        System.out.println(s1 == s3);//false
         // 在这里，本人有个疑问，如果s3和s4是引用的s1或者s2中的一个，那么s3和s4会等于s1或者s2中的一个，但是事实上却不等于
 
         // 通过对String pool的再一次了解，发现这个字面量的真正意义，他存储的是字符的字面量，也就是说，
@@ -31,23 +31,24 @@ public class JavaBaseType {
         // 所以这也解释了s1/s2与s3/s4地址不相等的原因
         String s5 = "555";
         String s6 = "555";
-        System.out.println(s5==s6);
+        System.out.println(s5 == s6);
         System.out.println();
     }
 
-    private static void bufferPool() { System.out.println("缓冲池");
+    private static void bufferPool() {
+        System.out.println("缓冲池");
         Integer x = new Integer(123);
         Integer y = new Integer(123);
-        System.out.println(x==y);//false
+        System.out.println(x == y);//false
 
         Integer i = Integer.valueOf(123);
         Integer j = Integer.valueOf(123);
-        System.out.println(i==j);//true
+        System.out.println(i == j);//true
         char min = '\u0000';
         System.out.println(Integer.valueOf(min));
         char c = '\u007F';
-        System.out.println( Integer.valueOf(c));
-        System.out.println( (char)(-128));
+        System.out.println(Integer.valueOf(c));
+        System.out.println((char) (-128));// ﾀ
     }
 
     private static void packType() {
@@ -55,7 +56,7 @@ public class JavaBaseType {
         Integer i = 2;
         //当int的值在缓存池中时，直接从缓存池中拿所需值，不在缓存池中时，新建一个Integer对象
         //新建对象直接赋值，
-        /**
+        /* 源码如下
          *      IntegerCache.low=-127,IntegerCache.high=128
          *
          *      public static Integer valueOf(int i) {
@@ -73,8 +74,8 @@ public class JavaBaseType {
     }
 
     private static void baseSize() {
-        System.out.println("Java 基础类型长度测试");
-        System.out.println(Byte.SIZE);//8
+        System.out.println("Java 基础类型长度测试(位)");
+        System.out.println(Byte.SIZE);//8位
         System.out.println(Short.SIZE);//16
         System.out.println(Integer.SIZE);//32
         System.out.println(Long.SIZE);//64
