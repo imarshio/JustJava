@@ -22,6 +22,11 @@ public class _01FinalUsage {
     public void finalVar() {
         // 该变量是在编译期就被赋初值的，且不可更改，如果变量是对象，那么指向对象的引用不可更改，但是对象的值可以更改
         System.out.println(x);
+
+        
+        System.exit(0);
+
+        System.out.println("这里就执行不到了哦");
     }
 
     public final void aMethod() {

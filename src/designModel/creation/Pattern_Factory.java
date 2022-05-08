@@ -14,7 +14,7 @@ import designModel.creation.builder.products.GigabateMainBoard;
 import designModel.creation.builder.products.SamsungDisk;
 import designModel.creation.factoryMethod.WoodenDoor;
 import designModel.creation.factoryMethod.WoodenDoorFactory;
-import designModel.creation.singleton.SignletonPattern;
+import designModel.creation.singleton.SingletonPattern;
 import designModel.creation.simpleFactory.JuiceFactory;
 import designModel.creation.simpleFactory.Juicer;
 import org.junit.Test;
@@ -51,9 +51,9 @@ public class Pattern_Factory {
     @Test
     public void cloneVSSingleton() {
         //clone会破坏单例模式嘛
-        SignletonPattern sp = SignletonPattern.getInstance();
+        SingletonPattern sp = SingletonPattern.getInstance();
         try {
-            SignletonPattern clone = sp.clone();
+            SingletonPattern clone = sp.clone();
             System.out.println(sp.toString());
             System.out.println(clone.toString());
             //designModel.Creational.signleton.SignletonPattern@506c589e
@@ -148,13 +148,13 @@ public class Pattern_Factory {
 
 
         //单线程环境下测试懒汉单例模式
-        SignletonPattern.getInstance();
+        SingletonPattern.getInstance();
 
         //多线程环境下测试饿汉单例模式
         for (int i = 0; i < 5; i++) {
             //lambda表达式
             //new Thread(()->{SignletonPattern.getInstance()}).start();
-            new Thread(SignletonPattern::getInstance).start();
+            new Thread(SingletonPattern::getInstance).start();
         }
 
         //多线程环境下测试懒汉单例模式

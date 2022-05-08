@@ -67,26 +67,26 @@ public class SignleTonTest {
 
     @Test
     public void defence() throws Exception{
-        LazySignleTonDefence instance = LazySignleTonDefence.getInstance();
+        LazySingleTonDefence instance = LazySingleTonDefence.getInstance();
 
-        Constructor<LazySignleTonDefence> declaredConstructor = LazySignleTonDefence.class.getDeclaredConstructor(null);
+        Constructor<LazySingleTonDefence> declaredConstructor = LazySingleTonDefence.class.getDeclaredConstructor(null);
 
         declaredConstructor.setAccessible(true);
 
-        LazySignleTonDefence instance2 = declaredConstructor.newInstance();
+        LazySingleTonDefence instance2 = declaredConstructor.newInstance();
         //反射可以破坏单例模式
         System.out.println(instance);
         System.out.println(instance2);
     }
 
     public void regect() throws Exception {
-        LazySignleTonWithSynchronizeAndVolatite instance = LazySignleTonWithSynchronizeAndVolatite.getInstance();
+        LazySingleTonWithSynchronizeAndVolatile instance = LazySingleTonWithSynchronizeAndVolatile.getInstance();
 
-        Constructor<LazySignleTonWithSynchronizeAndVolatite> declaredConstructor = LazySignleTonWithSynchronizeAndVolatite.class.getDeclaredConstructor(null);
+        Constructor<LazySingleTonWithSynchronizeAndVolatile> declaredConstructor = LazySingleTonWithSynchronizeAndVolatile.class.getDeclaredConstructor(null);
 
         declaredConstructor.setAccessible(true);
 
-        LazySignleTonWithSynchronizeAndVolatite instance2 = declaredConstructor.newInstance();
+        LazySingleTonWithSynchronizeAndVolatile instance2 = declaredConstructor.newInstance();
         //反射可以破坏单例模式
         System.out.println(instance);
         System.out.println(instance2);

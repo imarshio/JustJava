@@ -6,7 +6,7 @@ package designModel.creation.singleton;
  * @Description 单例模式
  */
 
-public class SignletonPattern implements Cloneable{
+public class SingletonPattern implements Cloneable{
 
     /**
      * 单例模式，单例模式的类只能创建一个子类，且只能由该类创建
@@ -14,22 +14,22 @@ public class SignletonPattern implements Cloneable{
      *
      */
 
-    private static SignletonPattern sp;
-    private SignletonPattern(){
+    private static SingletonPattern sp;
+    private SingletonPattern(){
         //私有化构造类，保证不被外界创建
         System.out.println("被创建啦。");
     }
 
-    public static SignletonPattern getInstance() {
+    public static SingletonPattern getInstance() {
         if (sp == null) {
-            sp = new SignletonPattern();
+            sp = new SingletonPattern();
         }
         return sp;
     }
 
     @Override
-    public SignletonPattern clone() throws CloneNotSupportedException {
-        return (SignletonPattern) super.clone();
+    public SingletonPattern clone() throws CloneNotSupportedException {
+        return (SingletonPattern) super.clone();
     }
 }
 
@@ -87,20 +87,20 @@ class LazySignleTon{
 // 枷锁可以直接加在类上，也可以直接加在方法上
 
 //多线程安全懒汉式单例模式
-class LazySignleTonWithSynchronized{
+class LazySingleTonWithSynchronized{
 
     //私有化构造器
-    private LazySignleTonWithSynchronized(){}
+    private LazySingleTonWithSynchronized(){}
 
-    private static LazySignleTonWithSynchronized lstws ;
+    private static LazySingleTonWithSynchronized lstws ;
 
     //双重检测锁模式，DCL
-    public static LazySignleTonWithSynchronized getInstance() {
+    public static LazySingleTonWithSynchronized getInstance() {
         if (lstws == null) {
             //对其加锁
-            synchronized(LazySignleTonWithSynchronized.class){
+            synchronized(LazySingleTonWithSynchronized.class){
                 if (lstws == null) {
-                    lstws = new LazySignleTonWithSynchronized();
+                    lstws = new LazySingleTonWithSynchronized();
                     //由于当前操作不是原子性操作，需依次执行以下步骤
                     //1.JVM分配内存空间
                     //2.执行构造函数，初始化对象
@@ -114,7 +114,6 @@ class LazySignleTonWithSynchronized{
 
                     //为了避免指令重排，我们需要加上volatile
                 }
-
             }
         }
         return lstws;
@@ -123,24 +122,22 @@ class LazySignleTonWithSynchronized{
 
 //多线程安全且无指令重排懒汉式单例模式
 //为了避免指令重排，我们需要加上volatile
-class LazySignleTonWithSynchronizeAndVolatite{
+class LazySingleTonWithSynchronizeAndVolatile{
 
     //私有化构造器
-    private LazySignleTonWithSynchronizeAndVolatite(){}
+    private LazySingleTonWithSynchronizeAndVolatile(){}
 
     //为了避免指令重排，我们需要加上volatile
-    private static volatile LazySignleTonWithSynchronizeAndVolatite lstws ;
+    private static volatile LazySingleTonWithSynchronizeAndVolatile lstws ;
 
     //双重检测锁模式，DCL
-    public static LazySignleTonWithSynchronizeAndVolatite getInstance() {
+    public static LazySingleTonWithSynchronizeAndVolatile getInstance() {
         if (lstws == null) {
             //对其加锁
-            synchronized(LazySignleTonWithSynchronizeAndVolatite.class){
+            synchronized(LazySingleTonWithSynchronizeAndVolatile.class){
                 if (lstws == null) {
-                    lstws = new LazySignleTonWithSynchronizeAndVolatite();
-
+                    lstws = new LazySingleTonWithSynchronizeAndVolatile();
                 }
-
             }
         }
         return lstws;
@@ -168,15 +165,15 @@ class OuterClass{
 
 
 //为了避免被反射多次加载该类
-class LazySignleTonDefence{
+class LazySingleTonDefence{
 
     //私有化构造器
-    private LazySignleTonDefence(){
+    private LazySingleTonDefence(){
 
         //为了避免被反射多次调用构造器
 
         //需要在构造器里面对其进行判断
-        synchronized(LazySignleTonDefence.class){
+        synchronized(LazySingleTonDefence.class){
             if (lstd != null) {
                 throw new RuntimeException("nono");
             }
@@ -184,15 +181,15 @@ class LazySignleTonDefence{
     }
 
     //为了避免指令重排，我们需要加上volatile
-    private static volatile LazySignleTonDefence lstd ;
+    private static volatile LazySingleTonDefence lstd ;
 
     //双重检测锁模式，DCL
-    public static LazySignleTonDefence getInstance() {
+    public static LazySingleTonDefence getInstance() {
         if (lstd == null) {
             //对其加锁
-            synchronized(LazySignleTonDefence.class){
+            synchronized(LazySingleTonDefence.class){
                 if (lstd == null) {
-                    lstd = new LazySignleTonDefence();
+                    lstd = new LazySingleTonDefence();
 
                 }
 
