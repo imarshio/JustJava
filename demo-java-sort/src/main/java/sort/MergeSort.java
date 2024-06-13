@@ -1,10 +1,11 @@
 package sort;
 
-import com.ms.math.Random;
+// import com.ms.math.Random;
 import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Random;
 
 
 /**
@@ -23,7 +24,7 @@ public class MergeSort {
         HashSet<Integer> unsorted = new HashSet<>();
         int i = 0;
         while (i < 20000000) {
-            unsorted.add(Random.randomInt(0, 2000000));
+            unsorted.add(new Random().nextInt());
             i++;
         }
 

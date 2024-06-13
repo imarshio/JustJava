@@ -1,9 +1,9 @@
-package creation.abstractFactory.abstracts;
+package creational.abstractFactory.abstracts;
 
-import designModel.creation.abstractFactory.products.GeliTV;
-import designModel.creation.abstractFactory.products.GeliWM;
-import designModel.creation.abstractFactory.products.TV;
-import designModel.creation.abstractFactory.products.WM;
+import creational.abstractFactory.products.GeliTV;
+import creational.abstractFactory.products.GeliWM;
+import creational.abstractFactory.products.TV;
+import creational.abstractFactory.products.WM;
 
 /**
  * @author masuo

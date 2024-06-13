@@ -1,4 +1,4 @@
-package creation.singleton;
+package creational.singleton;
 
 import org.junit.Test;
 
@@ -27,9 +27,9 @@ public class SingletonWithReflect {
         // 1、 ClassName.class  ==>  Hunger.class
         Class<HungerModel1> aClass1 = HungerModel1.class;
 
-        // 2、 Class.forName("类的全限定名")  ==> Class.forName("designModel.creation.singleton.Hunger")
+        // 2、 Class.forName("类的全限定名")  ==> Class.forName("creational.singleton.Hunger")
         try {
-            Class<?> aClass2 = Class.forName("designModel.creation.singleton.HungerModel1");
+            Class<?> aClass2 = Class.forName("creational.singleton.HungerModel1");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
@@ -51,8 +51,8 @@ public class SingletonWithReflect {
             System.out.println(declaredConstructor2);
             /*
              * 得到的是：
-             * private designModel.creation.singleton.Hunger()
-             * private designModel.creation.singleton.Hunger(int)
+             * private creational.singleton.Hunger()
+             * private creational.singleton.Hunger(int)
              * */
 
             // 设置构造器可达，针对私有构造器的

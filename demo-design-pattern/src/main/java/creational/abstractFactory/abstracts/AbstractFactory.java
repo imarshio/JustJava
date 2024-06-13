@@ -1,7 +1,7 @@
-package creation.abstractFactory.abstracts;
+package creational.abstractFactory.abstracts;
 
-import designModel.creation.abstractFactory.products.TV;
-import designModel.creation.abstractFactory.products.WM;
+import creational.abstractFactory.products.TV;
+import creational.abstractFactory.products.WM;
 
 /**
  * @author masuo

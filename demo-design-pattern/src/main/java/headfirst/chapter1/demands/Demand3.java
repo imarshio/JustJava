@@ -1,8 +1,8 @@
-package chapter1.demands;
+package headfirst.chapter1.demands;
 
-import designModel.headFirst.chapter1.version2.MallardDuck;
-import designModel.headFirst.chapter1.version2.RedheadDuck;
-import designModel.headFirst.chapter1.version2.RubberDuck;
+import headfirst.chapter1.version2.MallardDuck;
+import headfirst.chapter1.version2.RedheadDuck;
+import headfirst.chapter1.version2.RubberDuck;
 import org.junit.Test;
 
 /**

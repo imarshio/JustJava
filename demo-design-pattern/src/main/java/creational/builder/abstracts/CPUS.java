@@ -1,4 +1,4 @@
-package creation.builder.abstracts;
+package creational.builder.abstracts;
 
 /**
  * @author masuo

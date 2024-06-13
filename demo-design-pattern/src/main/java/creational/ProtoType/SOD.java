@@ -1,4 +1,4 @@
-package creation.ProtoType;
+package creational.ProtoType;
 
 import org.junit.Test;
 
@@ -27,16 +27,16 @@ public class SOD {
 
             System.out.println(sc1.toString());
             System.out.println(sc2.toString());
-            // ShallowClone{count=0, SOD='S', node=designModel.Creational.ProtoType.Node@506c589e}
-            // ShallowClone{count=0, SOD='S', node=designModel.Creational.ProtoType.Node@506c589e}
+            // ShallowClone{count=0, SOD='S', node=creational.ProtoType.Node@506c589e}
+            // ShallowClone{count=0, SOD='S', node=creational.ProtoType.Node@506c589e}
 
             // 对其属性进行更改
             sc2.setCount(1);
             sc2.setNode(new Node("0000"));
             System.out.println(sc1.toString());
             System.out.println(sc2.toString());
-            // ShallowClone{count=0, SOD='S', node=designModel.Creational.ProtoType.Node@506c589e}
-            // ShallowClone{count=1, SOD='S', node=designModel.Creational.ProtoType.Node@69d0a921}
+            // ShallowClone{count=0, SOD='S', node=creational.ProtoType.Node@506c589e}
+            // ShallowClone{count=1, SOD='S', node=creational.ProtoType.Node@69d0a921}
 
 
             // 当我们使用另一种方式去调用的时候
@@ -48,8 +48,8 @@ public class SOD {
             node2.setMessage("new new node");
             System.out.println(sc3.toString());
             System.out.println(sc4.toString());
-            // ShallowClone{count=2, SOD='S', node=designModel.Creational.ProtoType.Node@446cdf90}
-            // ShallowClone{count=2, SOD='S', node=designModel.Creational.ProtoType.Node@446cdf90}
+            // ShallowClone{count=2, SOD='S', node=creational.ProtoType.Node@446cdf90}
+            // ShallowClone{count=2, SOD='S', node=creational.ProtoType.Node@446cdf90}
             // 可以看到，两个是一样的。从数据看，但是我设置的第二个应该和第一个不一样，
             // 但是在我设置第二个的信息的时候将第一个的信息也重置了，
             // 这就是浅克隆的缺点吧算是。

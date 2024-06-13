@@ -1,7 +1,7 @@
-package creation.builder.products;
+package creational.builder.products;
 
 
-import designModel.creation.builder.abstracts.CPUS;
+import creational.builder.abstracts.CPUS;
 
 /**
  * @author masuo

@@ -1,6 +1,6 @@
 package sortal.impl;
 
-import sorting.sortal.Sorting;
+import sortal.Sorting;
 
 import java.util.ArrayList;
 

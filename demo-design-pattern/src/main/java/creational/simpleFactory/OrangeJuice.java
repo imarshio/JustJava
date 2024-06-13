@@ -1,4 +1,4 @@
-package creation.simpleFactory;
+package creational.simpleFactory;
 
 /**
  * @author masuo

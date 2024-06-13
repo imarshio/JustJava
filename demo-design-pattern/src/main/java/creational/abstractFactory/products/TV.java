@@ -1,4 +1,4 @@
-package creation.abstractFactory.products;
+package creational.abstractFactory.products;
 
 /**
  * @author masuo

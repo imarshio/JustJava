@@ -1,6 +1,6 @@
 package JavaBase;
 
-import JavaCore.MyJVM.Heap.EdenSurvivor;
+// import JavaCore.MyJVM.Heap.EdenSurvivor;
 
 /**
  * @author: masuo
@@ -18,15 +18,15 @@ public class StringTest {
         st.test4();
         st.test5();
         st.test6();
-        st.test7();
+        // st.test7();
 
     }
 
-    private void test7() {
-
-        EdenSurvivor es = new EdenSurvivor();
-        System.out.println(es);
-    }
+    // private void test7() {
+    //
+    //     EdenSurvivor es = new EdenSurvivor();
+    //     System.out.println(es);
+    // }
 
     private void test6() {
         System.out.println("math");

@@ -1,7 +1,7 @@
 package sortal.impl;
 
 import org.junit.Test;
-import sorting.sortal.Sorting;
+import sortal.Sorting;
 
 import java.util.ArrayList;
 

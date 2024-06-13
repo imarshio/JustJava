@@ -1,5 +1,9 @@
 package iterable.collection.list;
 
+import org.junit.Test;
+
+import java.util.ArrayList;
+
 /**
  * @author masuo
  * @date: 2022/04/27/ 下午10:31
@@ -10,6 +14,22 @@ package iterable.collection.list;
  * 缺点：插入删除会慢(O(n))。
  */
 public class ArrayListTest {
+
+    @Test
+    public void test1() {
+        ArrayList<Integer> list0 = new ArrayList<>();
+        list0.add(1);
+        list0.add(2);
+        list0.add(3);
+        list0.add(4);
+
+        ArrayList<Integer> list1 = new ArrayList<>();
+        list1.add(7);
+        // subList 区间左闭右开
+        list1.addAll(list0.subList(0, 3));
+
+        System.out.println(list1);
+    }
 
 
 }

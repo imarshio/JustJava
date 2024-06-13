@@ -1,9 +1,9 @@
-package creation.abstractFactory.abstracts;
+package creational.abstractFactory.abstracts;
 
-import designModel.creation.abstractFactory.products.HairTV;
-import designModel.creation.abstractFactory.products.HairWM;
-import designModel.creation.abstractFactory.products.TV;
-import designModel.creation.abstractFactory.products.WM;
+import creational.abstractFactory.products.HairTV;
+import creational.abstractFactory.products.HairWM;
+import creational.abstractFactory.products.TV;
+import creational.abstractFactory.products.WM;
 
 /**
  * @author masuo

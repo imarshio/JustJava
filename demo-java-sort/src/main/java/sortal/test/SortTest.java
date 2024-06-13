@@ -1,10 +1,10 @@
 package sortal.test;
 
 import org.junit.Test;
-import sorting.sortal.Sorting;
-import sorting.sortal.impl.BubbleSortImpl;
-import sorting.sortal.impl.QuickSortImpl;
-import sorting.sortal.impl.SelectSortImpl;
+import sortal.Sorting;
+import sortal.impl.BubbleSortImpl;
+import sortal.impl.QuickSortImpl;
+import sortal.impl.SelectSortImpl;
 
 /**
  * @author masuo

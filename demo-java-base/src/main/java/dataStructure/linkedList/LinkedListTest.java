@@ -1,7 +1,5 @@
 package dataStructure.linkedList;
 
-import com.sun.istack.internal.NotNull;
-import com.sun.istack.internal.Nullable;
 import org.junit.Test;
 
 import java.util.Iterator;
@@ -23,7 +21,7 @@ public class LinkedListTest {
         llt.test("00", null);
     }
 
-    public void test(@NotNull String str, @Nullable String i) {
+    public void test(String str, String i) {
         System.out.println(str + i);
     }
 

@@ -1,4 +1,4 @@
-package creation.factoryMethod;
+package creational.factoryMethod;
 
 /**
  * @author masuo

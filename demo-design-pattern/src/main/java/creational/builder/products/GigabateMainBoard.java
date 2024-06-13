@@ -1,9 +1,9 @@
-package creation.builder.products;
+package creational.builder.products;
 
 
-import designModel.creation.builder.abstracts.CPUS;
-import designModel.creation.builder.abstracts.Disks;
-import designModel.creation.builder.abstracts.MainBoards;
+import creational.builder.abstracts.CPUS;
+import creational.builder.abstracts.Disks;
+import creational.builder.abstracts.MainBoards;
 
 /**
  * @author masuo

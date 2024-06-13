@@ -1,4 +1,4 @@
-package creation.ProtoType;
+package creational.ProtoType;
 
 /**
  * @author masuo

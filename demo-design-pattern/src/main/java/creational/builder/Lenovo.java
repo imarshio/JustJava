@@ -1,10 +1,10 @@
-package creation.builder;
+package creational.builder;
 
 
-import designModel.creation.builder.abstracts.CPUS;
-import designModel.creation.builder.abstracts.Disks;
-import designModel.creation.builder.abstracts.MainBoards;
-import designModel.creation.builder.abstracts.PCFactory;
+import creational.builder.abstracts.CPUS;
+import creational.builder.abstracts.Disks;
+import creational.builder.abstracts.MainBoards;
+import creational.builder.abstracts.PCFactory;
 
 /**
  * @author masuo

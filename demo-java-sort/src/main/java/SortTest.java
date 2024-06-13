@@ -1,5 +1,5 @@
 import org.junit.Test;
-import sorting.sort.*;
+import sort.*;
 
 import java.util.ArrayList;
 import java.util.List;

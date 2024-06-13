@@ -1,7 +1,7 @@
-package creation.builder.products;
+package creational.builder.products;
 
 
-import designModel.creation.builder.abstracts.Disks;
+import creational.builder.abstracts.Disks;
 
 /**
  * @author masuo

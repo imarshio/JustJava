@@ -1,4 +1,4 @@
-package chapter1.version2;
+package headfirst.chapter1.version2;
 
 /**
  * @author masuo

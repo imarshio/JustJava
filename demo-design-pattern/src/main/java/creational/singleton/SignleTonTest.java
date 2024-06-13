@@ -1,4 +1,4 @@
-package creation.singleton;
+package creational.singleton;
 
 import org.junit.Test;
 

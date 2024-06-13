@@ -1,6 +1,7 @@
 package dataStructure.tree;
 
-import com.ms.math.Random;
+import java.util.Random;
+
 import org.junit.Test;
 
 import java.io.*;
@@ -84,7 +85,7 @@ public class TreeTest {
         DynamicBinaryTree<Integer> dbt = new DynamicBinaryTree<>();
         long start = System.currentTimeMillis();
         while (dbt.size < 20000) {
-            int i = Random.randomInt(100000);
+            int i = new Random().nextInt();
             System.out.println(i);
             dbt.add(i);
         }
@@ -182,7 +183,7 @@ public class TreeTest {
             FileWriter writer = new FileWriter(file); // 以当前内容替换文件中的内容
             BufferedWriter bufferedWriter = new BufferedWriter(writer);
             while (dbt.size < 10) {
-                int i = Random.randomInt(100);
+                int i = new Random().nextInt(100);
                 stack.add(i);
                 bufferedWriter.write(i + "\n");
                 dbt.add(i);

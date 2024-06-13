@@ -1,22 +1,22 @@
-package creation;
+package creational;
 
 
-import designModel.creation.ProtoType.RelizeType;
-import designModel.creation.abstractFactory.abstracts.AbstractFactory;
-import designModel.creation.abstractFactory.abstracts.HairFactory;
-import designModel.creation.abstractFactory.products.TV;
-import designModel.creation.builder.Lenovo;
-import designModel.creation.builder.abstracts.CPUS;
-import designModel.creation.builder.abstracts.Disks;
-import designModel.creation.builder.abstracts.MainBoards;
-import designModel.creation.builder.products.AmdCPU;
-import designModel.creation.builder.products.GigabateMainBoard;
-import designModel.creation.builder.products.SamsungDisk;
-import designModel.creation.factoryMethod.WoodenDoor;
-import designModel.creation.factoryMethod.WoodenDoorFactory;
-import designModel.creation.simpleFactory.JuiceFactory;
-import designModel.creation.simpleFactory.Juicer;
-import designModel.creation.singleton.SingletonPattern;
+import creational.ProtoType.RelizeType;
+import creational.abstractFactory.abstracts.AbstractFactory;
+import creational.abstractFactory.abstracts.HairFactory;
+import creational.abstractFactory.products.TV;
+import creational.builder.Lenovo;
+import creational.builder.abstracts.CPUS;
+import creational.builder.abstracts.Disks;
+import creational.builder.abstracts.MainBoards;
+import creational.builder.products.AmdCPU;
+import creational.builder.products.GigabateMainBoard;
+import creational.builder.products.SamsungDisk;
+import creational.factoryMethod.WoodenDoor;
+import creational.factoryMethod.WoodenDoorFactory;
+import creational.simpleFactory.JuiceFactory;
+import creational.simpleFactory.Juicer;
+import creational.singleton.SingletonPattern;
 import org.junit.Test;
 
 
@@ -54,8 +54,8 @@ public class Pattern_Factory {
             SingletonPattern clone = sp.clone();
             System.out.println(sp.toString());
             System.out.println(clone.toString());
-            // designModel.Creational.signleton.SignletonPattern@506c589e
-            // designModel.Creational.signleton.SignletonPattern@69d0a921
+            // creational.signleton.SignletonPattern@506c589e
+            // creational.signleton.SignletonPattern@69d0a921
 
             // 可以看到，单例模式已经被破坏了
         } catch (CloneNotSupportedException e) {
