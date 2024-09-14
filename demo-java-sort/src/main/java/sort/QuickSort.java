@@ -1,6 +1,6 @@
 package sort;
 
-import org.junit.Test;
+// import org.junit.Test;
 
 
 /**
@@ -10,7 +10,7 @@ import org.junit.Test;
  */
 public class QuickSort {
 
-    @Test
+    // @Test
     public void sort() {
         int[] unsort = {1, 2, 4, 5, 8, 9, 7, 4, 85, 0};
         int length = unsort.length;
@@ -25,7 +25,7 @@ public class QuickSort {
 
     public void quickSortPL(int[] unsort, int left, int right) {
         if (left >= right) {
-            // 相等时返回，不然会陷入无限循环 ***
+            // 相等时返回，不然会陷入无限循环
             return;
         }
         // 从小到大
@@ -59,7 +59,7 @@ public class QuickSort {
         // 左侧数据都是小于基准点的
         // 此时需要交换基准点与结束点
 
-        // 为了方便理解，这里声明的变量名称设置为“中间值”   ***
+        // 为了方便理解，这里声明的变量名称设置为“中间值”
         int mid = left;
         unsort[indexL] = unsort[mid];
         unsort[mid] = pivot;

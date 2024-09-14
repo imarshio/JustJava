@@ -1,6 +1,6 @@
 package sortal.impl;
 
-import org.junit.Test;
+// import org.junit.Test;
 import sortal.Sorting;
 
 import java.util.ArrayList;
@@ -90,7 +90,7 @@ public class QuickSortImpl implements Sorting {
         return new int[]{indexL, indexL};
     }
 
-    @Test
+    // @Test
     public void swapTest() {
         // swap(new int[]{1, 2}, 0, 1);
         sortDescent(new int[]{3, 5, 6, 7, 4, 3, 8, 5});

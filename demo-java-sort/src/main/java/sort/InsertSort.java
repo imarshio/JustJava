@@ -1,6 +1,6 @@
 package sort;
 
-import org.junit.Test;
+// import org.junit.Test;
 
 /**
  * @author masuo
@@ -9,7 +9,7 @@ import org.junit.Test;
  */
 public class InsertSort {
 
-    @Test
+    // @Test
     public void sort() {
         int[] unsorted = {1, 2, 4, 5, 8, 9, 7, 4, 85, 0};
 
@@ -37,7 +37,7 @@ public class InsertSort {
      * @author masuo
      * @date 2021-5-23 9.52~5-23 9.59 am
      */
-    @Test
+    // @Test
     public void insertSort() {
         int[] unsorted = {1, 2, 4, 5, 8, 9, 7, 4, 85, 0};
         int length = unsorted.length;

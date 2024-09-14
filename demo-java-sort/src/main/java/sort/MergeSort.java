@@ -1,7 +1,7 @@
 package sort;
 
 // import com.ms.math.Random;
-import org.junit.Test;
+// import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -16,7 +16,7 @@ import java.util.Random;
 
 public class MergeSort {
 
-    @Test
+    // @Test
     public void sort() {
 
         // addTest();
@@ -30,52 +30,52 @@ public class MergeSort {
 
         // long start1 = System.currentTimeMillis();
 
-        int[] unsort1 = new int[unsorted.size()];
-        // int[] unsort = {2, 1, 8, 4, 5, 9, 7, 4, 85, 0};
+        int[] unsorted1 = new int[unsorted.size()];
+        // int[] unsorted = {2, 1, 8, 4, 5, 9, 7, 4, 85, 0};
         int s1 = 0;
         for (Integer integer : unsorted) {
-            unsort1[s1] = integer;
+            unsorted1[s1] = integer;
             ++s1;
         }
 
         long start1 = System.currentTimeMillis();
-        mergeSort1(unsort1);
+        mergeSort1(unsorted1);
         long end1 = System.currentTimeMillis();
         System.out.println(("数组长度为：" + unsorted.size()));
         System.out.println("方法一用时：" + (end1 - start1));
 
-        int[] unsort2 = new int[unsorted.size()];
-        // int[] unsort = {2, 1, 8, 4, 5, 9, 7, 4, 85, 0};
+        int[] unsorted2 = new int[unsorted.size()];
+        // int[] unsorted = {2, 1, 8, 4, 5, 9, 7, 4, 85, 0};
         int s = 0;
         for (Integer integer : unsorted) {
-            unsort2[s] = integer;
+            unsorted2[s] = integer;
             ++s;
         }
         long start2 = System.currentTimeMillis();
-        mergeSort2(unsort2, 0, unsort2.length - 1);
+        mergeSort2(unsorted2, 0, unsorted2.length - 1);
         long end2 = System.currentTimeMillis();
         System.out.println("方法二用时：" + (end2 - start2));
 
         // 多次测试发现，当数组容量在10万左右时，时间在30~100ms徘徊
         // 方法二比较优秀，因为方法一在中间建立了多个数组，空间浪费严重，
         // 方法一在中间一直是在使用原数组，只有在排序时才使用临时数组
-        // for (Integer in : unsort) {
+        // for (Integer in : unsorted) {
         //    System.out.println(in);
         //}
     }
 
 
-    private void mergeSort2(int[] unsort, int left, int right) {
+    private void mergeSort2(int[] unsorted, int left, int right) {
 
         int mid = (right + left) / 2;
         if (left < right) {
-            mergeSort2(unsort, left, mid);
-            mergeSort2(unsort, mid + 1, right);
-            merge(unsort, left, mid, right);
+            mergeSort2(unsorted, left, mid);
+            mergeSort2(unsorted, mid + 1, right);
+            merge(unsorted, left, mid, right);
         }
     }
 
-    private void merge(int[] unsort, int left, int mid, int right) {
+    private void merge(int[] unsorted, int left, int mid, int right) {
         // 归并处理, 0 0 1
         int ll = mid;
         int lr = right;
@@ -83,33 +83,33 @@ public class MergeSort {
         int[] temp = new int[size];
         while (ll >= left && lr > mid) {
             // 从大往小排序
-            if (unsort[ll] > unsort[lr]) {
-                temp[size - 1] = unsort[ll];
+            if (unsorted[ll] > unsorted[lr]) {
+                temp[size - 1] = unsorted[ll];
                 --ll;
                 --size;
             } else {
-                temp[size - 1] = unsort[lr];
+                temp[size - 1] = unsorted[lr];
                 --lr;
                 --size;
             }
         }
         while (ll >= left) {
             // 从大往小排序
-            temp[--size] = unsort[ll--];
+            temp[--size] = unsorted[ll--];
         }
         while (lr > mid) {
             // 从大往小排序
-            temp[size - 1] = unsort[lr];
+            temp[size - 1] = unsorted[lr];
             --lr;
             --size;
         }
         while (left <= right) {
-            unsort[left++] = temp[size++];
+            unsorted[left++] = temp[size++];
         }
     }
 
 
-    @Test
+    // @Test
     public void addTest() {
         int i = 0;
         // i++;//会生成新的对象 ===》相当于 ：int j = i+1; i = j;
@@ -127,10 +127,10 @@ public class MergeSort {
     /**
      * 这种方法会浪费空间，
      *
-     * @param unsort 未排序数组，
+     * @param unsorted 未排序数组，
      * @return 排序数组
      */
-    public int[] mergeSort1(int[] unsort) {
+    public int[] mergeSort1(int[] unsorted) {
 
         // 归并排序是建立在归并操作上的一种有效的排序算法。
         // 该算法是采用分治法的一个典型应用
@@ -141,16 +141,16 @@ public class MergeSort {
 
         // 具体步骤，找到数组的中点，分成两个数组，当两个数组长度大于2时，就继续分，小于2就返回
         // 归并两个有序数组，所以我们需要对两个数组排序，然后将两个数组合并在排序
-        int length = unsort.length;
+        int length = unsorted.length;
         if (length < 2) {
-            return unsort;
+            return unsorted;
         }
 
         int mid = length / 2;
         // 取左侧数组
-        int[] left = Arrays.copyOfRange(unsort, 0, mid);
+        int[] left = Arrays.copyOfRange(unsorted, 0, mid);
         // 取右侧数组
-        int[] right = Arrays.copyOfRange(unsort, mid, length);
+        int[] right = Arrays.copyOfRange(unsorted, mid, length);
         return sort(mergeSort1(left), mergeSort1(right));
     }
 

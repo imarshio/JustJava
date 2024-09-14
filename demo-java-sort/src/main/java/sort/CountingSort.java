@@ -1,6 +1,6 @@
 package sort;
 
-import org.junit.Test;
+// import org.junit.Test;
 
 import java.util.Arrays;
 
@@ -13,7 +13,7 @@ import java.util.Arrays;
 public class CountingSort {
 
 
-    @Test
+    // @Test
     public void sort() {
         int[] unsort = {1, 2, 4, 5, 8, 9, 7, 4, 85, 0};
         // 计数排序使用的是取最大值和最小值，在相等下标的数组内值+1，这样存储

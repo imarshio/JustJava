@@ -1,4 +1,4 @@
-import org.junit.Test;
+// import org.junit.Test;
 import sort.*;
 
 import java.util.ArrayList;
@@ -9,7 +9,7 @@ public class SortTest {
 
 
     // no
-    @Test
+    // @Test
     public void quickSort() {
         //
         System.out.println(Math.ceil(7 / 2.0));
@@ -19,7 +19,7 @@ public class SortTest {
     }
 
     // no
-    @Test
+    // @Test
     public void shellSort() {
         //
         System.out.println("shell sort");
@@ -28,7 +28,7 @@ public class SortTest {
     }
 
     // ok
-    @Test
+    // @Test
     public void insertSort() {
         //
         System.out.println("insert sort");
@@ -40,7 +40,7 @@ public class SortTest {
 
 
     // ok
-    @Test
+    // @Test
     public void selectSort() {
         //
         System.out.println("selects ort");
@@ -50,7 +50,7 @@ public class SortTest {
 
 
     // ok
-    @Test
+    // @Test
     public void bubbleSort() {
         //
         System.out.println("bubble");
@@ -59,7 +59,7 @@ public class SortTest {
     }
 
 
-    @Test
+    // @Test
     public void listTest() {
         // 数组删除不能正向删除或者foreach删除，倒序删除或使用iterator
         List<String> list = new ArrayList<>(5);
@@ -89,7 +89,7 @@ public class SortTest {
         return r;
     }
 
-    @Test
+    // @Test
     public void scannerTest() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("");

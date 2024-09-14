@@ -1,3 +1,5 @@
+package com.marshio.demo;
+
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -19,7 +21,7 @@ import java.util.stream.Stream;
  * 内部迭代：以前对集合遍历都是通过Iterator或者For-Each的方式, 显式的在集合外部进行迭代， 这叫做外部迭代。 Stream提供了内部迭代的方式， 通过访问者模式(Visitor)实现
  */
 
-public class StreamAPI {
+public class StreamAPITest {
 
     @Test
     // 1.生成流,内部流处理

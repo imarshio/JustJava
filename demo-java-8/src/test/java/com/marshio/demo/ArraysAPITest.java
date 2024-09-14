@@ -1,9 +1,12 @@
+package com.marshio.demo;
+
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -12,13 +15,22 @@ import java.util.stream.Stream;
  * @Description Arrays使用
  */
 
-public class ArraysAPI {
+public class ArraysAPITest {
 
     @Test
     public void test1() {
         int[] numbers = {45, 4, 9, 16, 25};
+        // 转成List
+        List<Integer> list = Arrays.stream(numbers).boxed().collect(Collectors.toList());
+        System.out.println(list);
+        System.out.println(list.stream().sorted().collect(Collectors.toList()));
+    }
 
+    @Test
+    public void test2() {
         List<Integer> integers = Arrays.asList(45, 4, 9, 16, 25);
+        System.out.println(integers.stream().sorted());
+
         List<Integer> nums = new ArrayList<>();
 
         nums.add(5);
@@ -32,10 +44,12 @@ public class ArraysAPI {
 
         System.out.println(nums);
 
+
         Stream<Object> objectStream = nums.stream().map((Integer) -> {
             return null;
         });
 
+        Stream<Object> objectStream1 = nums.stream().map((Integer) -> add());
     }
 
     private Consumer<Integer> add() {

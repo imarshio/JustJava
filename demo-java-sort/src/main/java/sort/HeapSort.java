@@ -1,6 +1,6 @@
 package sort;
 
-import org.junit.Test;
+// import org.junit.Test;
 
 
 /**
@@ -37,7 +37,7 @@ public class HeapSort {
     // 4.重复 2，3 两步
     // https://www.cnblogs.com/sunshineliulu/p/12995910.html。
 
-    @Test
+    // @Test
     public void sort() {
 
         int[] unsort = {1, 2, 4, 5, 8, 9, 7, 4, 85, 0};

@@ -1,6 +1,6 @@
 package sort;
 
-import org.junit.Test;
+// import org.junit.Test;
 
 /**
  * @author masuo
@@ -11,7 +11,7 @@ import org.junit.Test;
 public class Recursion {
 
 
-    @Test
+    // @Test
     public void test() {
         System.out.println(recursion(5));
     }

@@ -1,7 +1,7 @@
 package sort;
 
 
-import org.junit.Test;
+// import org.junit.Test;
 
 /**
  * @author masuo
@@ -10,7 +10,7 @@ import org.junit.Test;
  */
 public class BubbleSort {
 
-    @Test
+    // @Test
     public void sort() {
         int[] unsort = {1, 2, 4, 5, 8, 9, 7, 4, 85, 0};
         for (int i = unsort.length; i > 0; i--) {

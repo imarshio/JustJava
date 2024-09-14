@@ -1,6 +1,6 @@
 package sortal.test;
 
-import org.junit.Test;
+// import org.junit.Test;
 import sortal.Sorting;
 import sortal.impl.BubbleSortImpl;
 import sortal.impl.QuickSortImpl;
@@ -14,7 +14,7 @@ import sortal.impl.SelectSortImpl;
 
 public class SortTest {
 
-    @Test
+    // @Test
     public void bubble() {
         Sorting sort = new BubbleSortImpl();
         int[] sortDescent = sort.sortDescent(new int[]{1, 2, 4, 5, 8, 9, 7, 4, 85, 0});
@@ -23,7 +23,7 @@ public class SortTest {
         }
     }
 
-    @Test
+    // @Test
     public void select() {
         Sorting sort = new SelectSortImpl();
         int[] sortDescent = sort.sortDescent(new int[]{1, 2, 4, 5, 8, 9, 7, 4, 85, 0});
@@ -32,7 +32,7 @@ public class SortTest {
         }
     }
 
-    @Test
+    // @Test
     public void quick() {
         Sorting sort = new QuickSortImpl();
         int[] sortDescent = sort.sortDescent(new int[]{1, 2, 4, 5, 8, 9, 7, 4, 85, 0});

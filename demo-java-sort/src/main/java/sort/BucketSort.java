@@ -1,6 +1,6 @@
 package sort;
 
-import org.junit.Test;
+// import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -15,7 +15,7 @@ import java.util.Comparator;
 @SuppressWarnings("ALL")
 public class BucketSort {
 
-    @Test
+    // @Test
     public void sort() {
 
         int[] unsort = {11, 22, 41, 51, 82, 92, 72, 42, 85, 10};

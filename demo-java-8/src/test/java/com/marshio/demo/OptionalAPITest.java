@@ -1,3 +1,5 @@
+package com.marshio.demo;
+
 import org.junit.Test;
 
 import java.util.Optional;
@@ -12,7 +14,7 @@ import java.util.Optional;
  * Optional 类的引入很好的解决空指针异常。
  */
 
-public class OptionalAPI {
+public class OptionalAPITest {
 
     @Test
     public void optionalTest() {

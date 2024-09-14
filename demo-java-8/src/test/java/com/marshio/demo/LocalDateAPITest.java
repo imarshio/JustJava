@@ -1,7 +1,10 @@
+package com.marshio.demo;
+
 import org.junit.Test;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
@@ -16,7 +19,7 @@ import java.util.TimeZone;
  */
 
 @SuppressWarnings("AlibabaLowerCamelCaseVariableNaming")
-public class LocalDateAPI {
+public class LocalDateAPITest {
 
     // Date 时间类
     @Test

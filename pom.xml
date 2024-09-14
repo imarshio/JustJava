@@ -17,6 +17,7 @@
         <module>demo-java-8</module>
         <module>demo-java-mysql</module>
         <module>demo-java-sort</module>
+        <module>demo-cache</module>
     </modules>
 
     <properties>

@@ -1,6 +1,6 @@
 package sort;
 
-import org.junit.Test;
+// import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -13,13 +13,13 @@ import java.util.Arrays;
 
 public class RadixSort {
 
-    @Test
+    // @Test
     public void test() {
         int num = 54;
         getDigitNum(num, 1);
     }
 
-    @Test
+    // @Test
     public void sort() {
         int[] unsort = {1, 2, 4, 5, 8, 9, 7, 4, 85, 0, 11, 22, 41, 51, 82, 92, 72, 42, 85, 10};
 

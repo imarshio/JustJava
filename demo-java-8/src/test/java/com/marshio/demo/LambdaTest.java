@@ -1,3 +1,5 @@
+package com.marshio.demo;
+
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -28,7 +30,7 @@ import java.util.stream.Collectors;
  * 参考：https://baijiahao.baidu.com/s?id=1685401324435208513&wfr=spider&for=pc
  */
 
-public class Lambda {
+public class LambdaTest {
 
     /****** 常用案例 ******/
     @Test
@@ -65,7 +67,7 @@ public class Lambda {
 
     }
 
-    // Lambda 也称 闭包，
+    // com.marshio.demo.LambdaTest 也称 闭包，
     // 允许我们将函数当成参数传递给某个方法
     // 或者把代码本身当作数据处理
     @Test
@@ -102,8 +104,8 @@ public class Lambda {
 
     @Test
     public void test1() {
-        java8.FunctionalInterfaceTest testLambda = (message) -> System.out.println("这是一个函数式接口的实现，" + message);
-        testLambda.methodToImpl("FunctionalInterfaceTest");
+        FunctionalInterfaceTest testLambda = (message) -> System.out.println("这是一个函数式接口的实现，" + message);
+        testLambda.methodToImpl("com.marshio.demo.FunctionalInterfaceTest");
     }
 
     interface MathOperation {

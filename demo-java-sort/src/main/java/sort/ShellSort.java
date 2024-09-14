@@ -1,6 +1,6 @@
 package sort;
 
-import org.junit.Test;
+// import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class ShellSort {
 
-    @Test
+    // @Test
     public void sort() {
         int[] unsort = {1, 2, 4, 5, 8, 9, 7, 4, 85, 0};
         int length = unsort.length;
@@ -56,7 +56,7 @@ public class ShellSort {
 
     }
 
-    @Test
+    // @Test
     public void insertSort() {
         int[] unsort = {1, 2, 4, 5, 8, 9, 7, 4, 85, 0};
 
