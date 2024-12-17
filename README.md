@@ -1,1 +1,1 @@
-# ms.java
+# just-java
